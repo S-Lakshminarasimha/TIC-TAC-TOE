@@ -6,7 +6,7 @@
 
 body{
     height:100vh;
-    background-color: #c6d6f6;
+    background-color: rgba(0,0,0,0.9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,17 +18,31 @@ body{
     font-size:3rem;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 400;
+    color: #fff;
+    text-shadow: 0 0 10px #fff;
+
 }
 
 .box{
     width:150px;
     height:150px;
-    background-color: #ccd6f6;
-    border:1px solid black;
+    background-color: inherit;
+    border:1px solid #fff;
     font-size: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
+    box-shadow: 0 0 10px #fff;
+}
+
+.user{
+    text-shadow: 0 0 10px blue, 0 0 15px blue, 0 0 30px blue;
+}
+
+.computer{
+    text-shadow: 0 0 8px red, 0 0 15px red, 0 0 30px red;
+
 }
 
 .box:hover{
@@ -37,9 +51,22 @@ body{
 }
 
 #game_pad{
-    width:450px;
-    height:450px;
+    padding:10px;
+    width:480px;
+    height:480px;
     display: flex;
+    gap:5px;
     flex-wrap: wrap;
-    outline: 5px solid black;
 }
+
+/* .userwon{
+
+}
+
+.computerwon{
+
+}
+
+.tiegame{
+
+} */
