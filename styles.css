@@ -20,7 +20,6 @@ body{
     font-weight: 400;
     color: #fff;
     text-shadow: 0 0 10px #fff;
-
 }
 
 .box{
@@ -45,7 +44,7 @@ body{
 
 }
 
-.box:hover{
+.hover:hover{
     background-color: rgba(0,0,0,0.3);
     cursor:pointer;
 }
@@ -59,14 +58,39 @@ body{
     flex-wrap: wrap;
 }
 
-/* .userwon{
+#display{
+    margin-top: 20px;
+    padding:10px;
+    color:#fff;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+}
+
+.gameover{
+    filter: blur(10px);
 
 }
 
-.computerwon{
-
+#btn{
+    padding: 15px 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 4px;
+    background-color: #fff;
+    color: #000;
+    outline: none;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border: none;
+    cursor: pointer;
 }
 
-.tiegame{
+#btn:hover{
+    box-shadow: 0 0 10px #fff;
+}
 
-} */
+.hide{
+    display: none;
+}

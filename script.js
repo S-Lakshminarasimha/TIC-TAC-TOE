@@ -1,26 +1,50 @@
 const visited = ['','','','','','','','','',''];
 
 const box = Array.from(document.querySelectorAll('.box'))
+const pad = document.getElementById('game_pad')
+const d = document.getElementById('display')
+const btn = document.getElementById('btn')
+
+box.map(addlistener)
+btn.addEventListener('click',restart)
+
+function restart(){
+    window.location.reload()
+}
 
 function  addlistener(ele){
     ele.addEventListener('click',Game)
 }
-box.map(addlistener)
 
+function removelistener(ele){
+    ele.removeEventListener('click',Game)
+}
+
+function removeHover(ele){
+    ele.classList.remove('hover')
+}
 
 function Game(e){
     let pos = Number(e.target.dataset.val)
     if (visited[pos]===''){
         let UserWinStatus = userMove(pos)
         if (UserWinStatus){
-            // set animation here
-            return console.log('Congratulations you won the game!!')
+            d.textContent= 'Congratulations you won the game !!'
+            pad.classList.add('gameover')
+            box.map(removelistener)
+            box.map(removeHover)
+            btn.classList.remove('hide')
+            return
         }
     }
     let ComputerWinStatus = computerMove(pos)
     if (ComputerWinStatus){
-        // set animation here
-        return console.log("sorry computer won the game")
+        d.textContent= 'Sorry! you lost the game...'  
+        pad.classList.add('gameover')
+        box.map(removelistener)
+        box.map(removeHover)
+        btn.classList.remove('hide')
+        return
     }
 
 }
@@ -97,7 +121,12 @@ function computerMove(pos){
         }
     }
     else{
-        console.log("tie game")
+        d.textContent= 'Oops Tie Game..!!'
+        pad.classList.add('gameover')
+        box.map(removelistener)
+        box.map(removeHover)
+        btn.classList.remove('hide')
+        return
     }
    
     
